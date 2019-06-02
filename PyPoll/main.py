@@ -9,10 +9,14 @@ with open(csvpath, newline="") as csvfile:
     #print (csvreader)
     next(csvreader, None) #skip header
 
+    #initiate variables and lists to be used later on
     totalvotes = 0
     candidates = []
     votes = [0, 0, 0, 0]
     
+    #loop through each row of the csv file
+    #collect all unique values in the 3 column (Candidates) and append to list [candidates]
+    #also find the total sum of votes for each candidates and append to a separate list [votes]
     for row in csvreader:
         totalvotes += 1
         if row [2] not in candidates:
@@ -31,10 +35,11 @@ with open(csvpath, newline="") as csvfile:
             votes[3] += 1
         
     
-    #print (candidates)
-    #print (votes)
+
     percentage = []
     most_votes = 0
+    # calculate percentage of votes and append to list [percentage]
+    # also compare all values in votes list to find the largest one. Largest vote should match index of winning candidate
     for i in range (len(candidates)):
         percentage.append(votes[i]/totalvotes)
         if votes[i] > most_votes:
@@ -47,6 +52,7 @@ with open(csvpath, newline="") as csvfile:
     # open the output file
     with open(output_file, 'w', newline='') as text_file:
         
+        # write output to the specified file
         text_file.write("\n" +  "Election Results\n" 
         + "---------------------------\n" +  
         "Total Votes: " + str(totalvotes) + "\n" + 
