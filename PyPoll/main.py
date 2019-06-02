@@ -41,20 +41,35 @@ with open(csvpath, newline="") as csvfile:
             most_votes = votes[i]
             winner = candidates[i]
     
-    #print (candidates)
-    #print (votes)
-    #print (percentage)
-    #print (winner)
-    
+    # specify the file to write to
+    output_file = os.path.join("..", "PyPoll", "Output", "election_results.txt")
+
+    # open the output file
+    with open(output_file, 'w', newline='') as text_file:
+        
+        text_file.write("\n" +  "Election Results\n" 
+        + "---------------------------\n" +  
+        "Total Votes: " + str(totalvotes) + "\n" + 
+        "---------------------------\n")
+        
+
+        for i in range (len(candidates)):
+            text_file.write(candidates[i] + ": " + "{:.3%}".format(percentage[i]) + " (" + str(votes[i]) + ")" + "\n")
+        
+        text_file.write("---------------------------\n" +
+         "Winner: " +  winner + "\n" +
+          "---------------------------\n")
+
+
     print ("")
     print ("Election Results")
     print ("---------------------------")
     print ("Total Votes: " + str(totalvotes))
     print ("---------------------------")
+    
     for i in range (len(candidates)):
         print (candidates[i] + ": " + "{:.3%}".format(percentage[i]) + " (" + str(votes[i]) + ")")
     
-
     print ("---------------------------")
     print ("Winner: " + winner)
     print ("---------------------------")
