@@ -2,8 +2,7 @@
 
 ## PyBank
 
-* A Python script for analyzing the financial records of a compan dataset is composed of two columns: `Date` and `Profit/Losses`. 
- task is to create a Python script that analyzes the records to calculate each of the following:
+* A Python script for analyzing the financial records of a compan dataset is composed of two columns: `Date` and `Profit/Losses`. The task is to create a Python script that analyzes the records to calculate each of the following:
 
  total number of months included in the dataset
 
@@ -21,9 +20,7 @@
 ## PyPoll
 
 
-* A Python script to help a small, rural town modernize its vote-counting process. The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. 
-
-* The task is to create a Python script that analyzes the votes and calculates each of the following:
+* A Python script to help a small, rural town modernize its vote-counting process. The dataset is composed of three columns: `Voter ID`, `County`, and `Candidate`. The task is to create a Python script that analyzes the votes and calculates each of the following:
 
   * total number of votes cast
 
